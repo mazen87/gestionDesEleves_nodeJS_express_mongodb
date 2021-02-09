@@ -61,7 +61,7 @@ exports.recupererUnEleve = (req, res, next) => {
 };
 
 exports.modifierEleve = (req, res, next) => {
-  
+
   Eleve.findOne({_id: req.params.id,})
   .then(eleve=>{
     if(eleve.classe._id != req.body.classe ){
@@ -123,7 +123,7 @@ const eleve1 = new Eleve({
 };
 
 exports.supprimerEleve = (req, res, next) => {
-  eleve.findOne({_id: req.params.id})
+  Eleve.findOne({_id: req.params.id})
   .then(eleve =>{
     Classe.findOne({_id:eleve.classe._id})
     .then(classe =>{
