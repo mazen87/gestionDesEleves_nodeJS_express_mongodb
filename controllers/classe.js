@@ -43,7 +43,8 @@ exports.modifierClasse = (req, res, next) => {
     _id: req.params.id,
     nom: req.body.nom,
   });
-  classe.updateOne({_id: req.params.id}, classe).then(
+  console.log(req.body.nom);
+  Classe.updateOne({_id: classe._id}, classe).then(
     () => {
       res.status(201).json({
         message: 'classe modifié avec succès!'
