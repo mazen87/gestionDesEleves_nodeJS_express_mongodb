@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const ClasseSchema = mongoose.Schema({
     _id: Schema.Types.ObjectId,
     nom:String,
-    eleves: [{ type: Schema.Types.ObjectId, ref: 'Eleve' }]
+    eleves: [{ type: Schema.Types.ObjectId, ref: 'Eleve' }],
+  
 
 })
 

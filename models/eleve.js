@@ -9,8 +9,9 @@
             nom:String,
             prenom:String,
             dateNaissance:Date,
-            moyen:Number,
-            classe: { type: Schema.Types.ObjectId, ref: 'Classe' }
+            moyen:{type:Number , default:0},
+            classe: { type: Schema.Types.ObjectId, ref: 'Classe' },
+            eleveDevoirs :  [{ type: Schema.Types.ObjectId, ref: 'EleveDevoir' }]
 
         })
 

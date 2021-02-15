@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const eleveCtrl = require('../controllers/eleve');
+const auth = require('../middleware/auth');
 
-router.get('/', eleveCtrl.recupererTousEleves);
-router.post('/', eleveCtrl.ajouterEleve);
-router.get('/:id', eleveCtrl.recupererUnEleve);
-router.put('/:id', eleveCtrl.modifierEleve);
-router.delete('/:id', eleveCtrl.supprimerEleve);
+
+router.get('/', auth, eleveCtrl.recupererTousEleves);
+router.post('/', auth, eleveCtrl.ajouterEleve);
+router.get('/:id', auth, eleveCtrl.recupererUnEleve);
+router.put('/:id', auth, eleveCtrl.modifierEleve);
+router.delete('/:id', auth, eleveCtrl.supprimerEleve);
 
 
 

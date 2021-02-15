@@ -4,7 +4,6 @@ const mongoose =require('mongoose');
 exports.ajouterClasse = (req, res, next) => {
   const classe = new Classe({
     _id: new mongoose.Types.ObjectId(),
-    //nom: 'classe_2'
     nom: req.body.nom,
   });
   classe.save().then(

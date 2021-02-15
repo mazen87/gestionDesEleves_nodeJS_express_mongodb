@@ -12,6 +12,9 @@ mongoose.connect('mongodb://localhost:27017/gestionDesEleves',
     
   const eleveRoutes = require('./routes/eleve');
   const classeRoutes = require('./routes/classe');
+  const devoirRoutes = require('./routes/devoir');
+  const usereRoutes = require('./routes/user');
+  const eleveDevoirRoutes = require('./routes/eleveDevoir');
   
   app.use(bodyParser.json());
   app.use((req, res, next) => {
@@ -23,6 +26,9 @@ mongoose.connect('mongodb://localhost:27017/gestionDesEleves',
 
   app.use('/api/eleves', eleveRoutes);
   app.use('/api/classes', classeRoutes);
+  app.use('/api/devoirs', devoirRoutes);
+  app.use('/api/elevesDevoirs', eleveDevoirRoutes);
+  app.use('/api/auth', usereRoutes);
 
 
   module.exports = app;
